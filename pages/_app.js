@@ -1,5 +1,7 @@
 import '../styles/globals.css'
 import Script from 'next/script'
+import { useEffect } from 'react'
+import { useRouter } from 'next/router'
 import * as ga from '../lib/ga'
 
 export default function App({ Component, pageProps }) {
@@ -19,6 +21,6 @@ export default function App({ Component, pageProps }) {
       router.events.off('routeChangeComplete', handleRouteChange)
     }
   }, [router.events])
-  
+
   return <Component {...pageProps} /> 
 }
